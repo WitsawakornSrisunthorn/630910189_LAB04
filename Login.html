@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+    }
+  </style>
+  <script>
+    function login() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "student01" && password === "1234") {
+        document.getElementById("login-button").removeEventListener("click", login);
+        document.getElementById("result").textContent = "your username and password are correct! you are logged in.";
+      } else {
+        document.getElementById("result").textContent = "your username or password is incorrect! please try again.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter your username"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter your password"><br><br>
+
+    <button id="login-button" onclick="login()">Login</button>
+
+    <p id="result"></p>
+  </div>
+</body>
+</html>
